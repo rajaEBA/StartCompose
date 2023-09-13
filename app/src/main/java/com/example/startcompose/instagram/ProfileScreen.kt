@@ -105,6 +105,7 @@ fun ProfileScreen() {
                 ),
                 modifier = Modifier.fillMaxWidth()
             )
+            1 -> Text(text= "test")
         }
     }
 
@@ -234,10 +235,11 @@ fun ProfileStat(
         Text(
             text = nameText,
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp
+            fontSize = 20.sp,
+            color = Color.Black
         )
         Spacer(modifier = Modifier.height(height = 4.dp))
-        Text(text = text)
+        Text(text = text, color = Color.Black)
     }
 
 }
@@ -301,10 +303,7 @@ fun ProfileDescription(
                 lineHeight = lineHeight
             )
         }
-
     }
-
-
 }
 
 @Composable
@@ -372,15 +371,12 @@ fun ActionButton(
         }
         if (icon != null) {
             Icon(
-               imageVector = icon,
-               contentDescription = text,
-               tint = Color.Black
+                imageVector = icon,
+                contentDescription = text,
+                tint = Color.Black
             )
-
         }
-
     }
-
 }
 
 @Composable
@@ -406,10 +402,9 @@ fun HighlightSection(
                 )
             }
         }
-
     }
-
 }
+
 @Composable
 fun PostTabView(
     modifier: Modifier = Modifier,
@@ -445,7 +440,6 @@ fun PostTabView(
                         .padding(10.dp)
                         .size(24.dp)
                 )
-
             }
         }
     }
