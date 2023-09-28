@@ -24,7 +24,7 @@ class DefaultPaginator<Key, Item>(
             return
         }
         currentKey = getNextKey(items)
-        onSuccess(items,currentKey)
+        onSuccess(items, currentKey)
         onLoadUpdated(false)
     }
 
