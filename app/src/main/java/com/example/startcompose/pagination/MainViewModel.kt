@@ -12,10 +12,6 @@ class MainViewModel : ViewModel() {
     private val repository = Repository()
     var state by mutableStateOf(ScreenState())
 
-    init {
-        loadNextItems()
-    }
-
     private val paginator = DefaultPaginator(
         initialKey = state.page,
         onLoadUpdated = {
@@ -40,6 +36,10 @@ class MainViewModel : ViewModel() {
         }
 
     )
+
+    init {
+        loadNextItems()
+    }
 
     fun loadNextItems() {
         viewModelScope.launch {

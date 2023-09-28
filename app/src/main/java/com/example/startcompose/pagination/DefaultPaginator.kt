@@ -15,6 +15,7 @@ class DefaultPaginator<Key, Item>(
     override suspend fun loadNextItem() {
         if(isMakingRequest) { return }
         isMakingRequest = true
+        onLoadUpdated(true)
         val result = onRequest(currentKey)
         isMakingRequest = false
         val items = result.getOrElse {
@@ -23,8 +24,8 @@ class DefaultPaginator<Key, Item>(
             return
         }
         currentKey = getNextKey(items)
+        onSuccess(items,currentKey)
         onLoadUpdated(false)
-
     }
 
     override fun reset() {
