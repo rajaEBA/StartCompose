@@ -45,10 +45,7 @@ fun DrawerBody(
                     text = item.title,
                     style = itemTextStyle,
                     modifier = Modifier.weight(1f))
-
             }
-
-
         }
     }
 
