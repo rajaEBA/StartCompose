@@ -12,7 +12,7 @@
         android:theme="@style/Theme.StartCompose"
         tools:targetApi="31">
         <activity
-            android:name=".imagecard.ImageCard"
+            android:name=".state.StateActivity"
             android:exported="true"
             android:theme="@style/Theme.StartCompose">
             <intent-filter>
