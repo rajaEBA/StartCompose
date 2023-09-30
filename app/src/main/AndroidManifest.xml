@@ -12,13 +12,22 @@
         android:theme="@style/Theme.StartCompose"
         tools:targetApi="31">
         <activity
-            android:name=".drawer.DrawerActivity"
+            android:name=".deeplink.DeepLinkActivity"
             android:exported="true"
             android:theme="@style/Theme.StartCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <data
+                    android:host="pl-coding.com"
+                    android:scheme="https" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
     </application>
