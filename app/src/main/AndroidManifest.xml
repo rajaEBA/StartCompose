@@ -12,7 +12,7 @@
         android:theme="@style/Theme.StartCompose"
         tools:targetApi="31">
         <activity
-            android:name=".constrainlayout.ConstrainLayoutActivity"
+            android:name=".animation.SimpleAnimationActivity"
             android:exported="true"
             android:theme="@style/Theme.StartCompose">
             <intent-filter>
