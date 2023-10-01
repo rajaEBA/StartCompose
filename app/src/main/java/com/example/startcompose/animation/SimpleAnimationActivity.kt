@@ -3,9 +3,7 @@ package com.example.startcompose.animation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.core.LinearOutSlowInEasing
-import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
@@ -30,10 +28,8 @@ class SimpleAnimationActivity : ComponentActivity() {
                 var sizeState by remember { mutableStateOf(200.dp) }
                 val size by animateDpAsState(
                     targetValue = sizeState,
-                    tween(
-                        durationMillis = 3000,
-                        delayMillis = 300,
-                        easing = LinearOutSlowInEasing
+                    spring(
+                        Spring.DampingRatioHighBouncy
                     )
                 )
                 Box(
