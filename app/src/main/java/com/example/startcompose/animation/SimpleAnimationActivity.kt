@@ -28,9 +28,12 @@ class SimpleAnimationActivity : ComponentActivity() {
                 var sizeState by remember { mutableStateOf(200.dp) }
                 val size by animateDpAsState(
                     targetValue = sizeState,
-                    spring(
-                        Spring.DampingRatioHighBouncy
-                    )
+                    keyframes {
+                        durationMillis = 5000
+                        sizeState at 0 with LinearEasing
+                        sizeState * 1.5f at 1000 with FastOutLinearInEasing
+                        sizeState * 2f at 5000
+                    }
                 )
                 Box(
                     modifier = Modifier
