@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -21,9 +22,9 @@ class ListActivity : ComponentActivity() {
         setContent {
             StartComposeTheme {
                 LazyColumn {
-                    items(5000) { i ->
+                    itemsIndexed(listOf("this", "is", "a", "sample")) {index , contant ->
                         Text(
-                            text = "text $i",
+                            text = contant,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.Center,
