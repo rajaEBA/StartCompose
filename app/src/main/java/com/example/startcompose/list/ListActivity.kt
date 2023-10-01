@@ -3,11 +3,9 @@ package com.example.startcompose.list
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -22,11 +20,8 @@ class ListActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             StartComposeTheme {
-                val state = rememberScrollState()
-                Column(
-                    modifier = Modifier.verticalScroll(state)
-                ) {
-                    for (i in 1..50) {
+                LazyColumn {
+                    items(5000) { i ->
                         Text(
                             text = "text $i",
                             fontSize = 24.sp,
@@ -41,4 +36,5 @@ class ListActivity : ComponentActivity() {
             }
         }
     }
+
 }
