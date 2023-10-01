@@ -12,7 +12,7 @@
         android:theme="@style/Theme.StartCompose"
         tools:targetApi="31">
         <activity
-            android:name=".animation.SimpleAnimationActivity"
+            android:name=".progressbar.CircularProgressbarActivity"
             android:exported="true"
             android:theme="@style/Theme.StartCompose">
             <intent-filter>
